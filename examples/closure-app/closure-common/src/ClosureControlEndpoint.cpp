@@ -134,13 +134,8 @@ CHIP_ERROR ClosureControlEndpoint::Init()
     ClusterConformance conformance;
     conformance.FeatureMap()
         .Set(Feature::kPositioning)
-        .Set(Feature::kMotionLatching)
         .Set(Feature::kSpeed)
-        .Set(Feature::kVentilation)
-        .Set(Feature::kPedestrian)
-        .Set(Feature::kCalibration)
-        .Set(Feature::kProtection)
-        .Set(Feature::kManuallyOperable);
+        .Set(Feature::kCalibration);
     conformance.OptionalAttributes().Set(OptionalAttributeEnum::kCountdownTime);
 
     ClusterInitParameters initParams;

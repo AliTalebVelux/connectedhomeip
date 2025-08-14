@@ -2813,14 +2813,12 @@ endpoint 1 {
   server cluster ClosureControl {
     emits event OperationalError;
     emits event MovementCompleted;
-    emits event EngageStateChanged;
     emits event SecureStateChanged;
     callback attribute countdownTime;
     ram      attribute mainState;
     callback attribute currentErrorList;
     callback attribute overallCurrentState;
     callback attribute overallTargetState;
-    ram      attribute latchControlModes;
     callback attribute generatedCommandList;
     callback attribute acceptedCommandList;
     callback attribute attributeList;
@@ -2854,54 +2852,8 @@ endpoint 2 {
     callback attribute targetState;
     ram      attribute resolution;
     ram      attribute stepValue;
-    ram      attribute unit;
-    callback attribute unitRange;
     callback attribute limitRange;
     ram      attribute translationDirection;
-    ram      attribute rotationAxis;
-    ram      attribute overflow;
-    ram      attribute modulationType;
-    ram      attribute latchControlModes;
-    callback attribute generatedCommandList;
-    callback attribute acceptedCommandList;
-    callback attribute attributeList;
-    callback attribute featureMap;
-    callback attribute clusterRevision;
-
-    handle command SetTarget;
-    handle command Step;
-  }
-}
-endpoint 3 {
-  device type ma_closure_panel = 561, version 1;
-
-
-  server cluster Descriptor {
-    callback attribute deviceTypeList;
-    callback attribute serverList;
-    callback attribute clientList;
-    callback attribute partsList;
-    callback attribute tagList;
-    callback attribute generatedCommandList;
-    callback attribute acceptedCommandList;
-    callback attribute attributeList;
-    callback attribute featureMap;
-    callback attribute clusterRevision;
-  }
-
-  server cluster ClosureDimension {
-    callback attribute currentState;
-    callback attribute targetState;
-    ram      attribute resolution;
-    ram      attribute stepValue;
-    ram      attribute unit;
-    callback attribute unitRange;
-    callback attribute limitRange;
-    ram      attribute translationDirection;
-    ram      attribute rotationAxis;
-    ram      attribute overflow;
-    ram      attribute modulationType;
-    ram      attribute latchControlModes;
     callback attribute generatedCommandList;
     callback attribute acceptedCommandList;
     callback attribute attributeList;
