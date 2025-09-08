@@ -182,11 +182,12 @@ void ClosureControlEndpoint::OnStopMotionActionComplete()
 
         if (overallCurrentState.IsNull())
         {
-            overallCurrentState.SetNonNull(GenericOverallCurrentState(position, NullOptional, NullOptional, NullOptional));
+            overallCurrentState.SetNonNull(GenericOverallCurrentState(position, NullOptional, NullOptional, false));
         }
         else
         {
             overallCurrentState.Value().position = position;
+            overallCurrentState.Value().secureState = false;
         }
 
         VerifyOrReturn(mLogic.SetOverallCurrentState(overallCurrentState) == CHIP_NO_ERROR,
@@ -211,7 +212,7 @@ void ClosureControlEndpoint::OnStopMotionActionComplete()
 void ClosureControlEndpoint::OnCalibrateActionComplete()
 {
     DataModel::Nullable<GenericOverallCurrentState> overallCurrentState(GenericOverallCurrentState(
-        MakeOptional(DataModel::MakeNullable(CurrentPositionEnum::kFullyClosed)), MakeOptional(DataModel::MakeNullable(true)),
+        MakeOptional(DataModel::MakeNullable(CurrentPositionEnum::kFullyClosed)), NullOptional,
         MakeOptional(Globals::ThreeLevelAutoEnum::kAuto), DataModel::MakeNullable(true)));
     DataModel::Nullable<GenericOverallTargetState> overallTargetState = DataModel::NullNullable;
 
@@ -220,10 +221,13 @@ void ClosureControlEndpoint::OnCalibrateActionComplete()
     mLogic.SetOverallTargetState(overallTargetState);
     mLogic.SetCountdownTimeFromDelegate(0);
     mLogic.GenerateMovementCompletedEvent();
+
+    ChipLogDetail(AppServer, "OnCalibrateActionComplete");
 }
 
 void ClosureControlEndpoint::OnMoveToActionComplete()
 {
+    ChipLogDetail(AppServer, "OnMoveToActionComplete");
     UpdateCurrentStateFromTargetState();
     mLogic.SetMainState(MainStateEnum::kStopped);
     mLogic.SetCountdownTimeFromDelegate(0);
@@ -319,11 +323,12 @@ void ClosureControlEndpoint::OnPanelMotionActionComplete()
 
     if (overallCurrentState.IsNull())
     {
-        overallCurrentState.SetNonNull(GenericOverallCurrentState(position, NullOptional, NullOptional, NullOptional));
+        overallCurrentState.SetNonNull(GenericOverallCurrentState(position, NullOptional, NullOptional, false));
     }
     else
     {
         overallCurrentState.Value().position = position;
+        overallCurrentState.Value().secureState = false;
     }
 
     // Set latch and speed to their target values if they are set in the overall target.
