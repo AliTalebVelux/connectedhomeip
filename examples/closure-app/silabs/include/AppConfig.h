@@ -25,4 +25,4 @@
 
 #define APP_TASK_NAME "Closure"
 
-#define BLE_DEV_NAME "Silabs-Closure"
+#define BLE_DEV_NAME "VELUX-Closure"

@@ -49,11 +49,10 @@ constexpr uint8_t kTagClosureCovering = 0x00;
 // Derived from
 // https://github.com/CHIP-Specifications/connectedhomeip-spec/blob/master/src/namespaces/Namespace-Closure-Covering.adoc
 constexpr uint8_t kNamespaceCovering   = 0x46;
-constexpr uint8_t kTagCoveringVenetian = 0x03;
+constexpr uint8_t kTagCoveringBlind    = 0x00;
 // Derived from https://github.com/CHIP-Specifications/connectedhomeip-spec/blob/master/src/namespaces/Namespace-ClosurePanel.adoc
 constexpr uint8_t kNamespaceClosurePanel = 0x45;
 constexpr uint8_t kTagClosurePanelLift   = 0x00;
-constexpr uint8_t kTagClosurePanelTilt   = 0x01;
 
 // Define the list of semantic tags for the endpoint
 const Clusters::Descriptor::Structs::SemanticTagStruct::Type kEndpoint1TagList[] = {
@@ -61,8 +60,8 @@ const Clusters::Descriptor::Structs::SemanticTagStruct::Type kEndpoint1TagList[]
       .tag         = kTagClosureCovering,
       .label       = chip::MakeOptional(DataModel::Nullable<chip::CharSpan>("Closure.Covering"_span)) },
     { .namespaceID = kNamespaceCovering,
-      .tag         = kTagCoveringVenetian,
-      .label       = chip::MakeOptional(DataModel::Nullable<chip::CharSpan>("Covering.Venetian"_span)) },
+      .tag         = kTagCoveringBlind,
+      .label       = chip::MakeOptional(DataModel::Nullable<chip::CharSpan>("Covering.Blind"_span)) },
 };
 
 const Clusters::Descriptor::Structs::SemanticTagStruct::Type kEndpoint2TagList[] = {

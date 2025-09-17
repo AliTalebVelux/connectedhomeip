@@ -85,13 +85,13 @@
  *  @brief Fallback value for the basic information cluster's Vendor name attribute
  *   if the actual vendor name is not provisioned in the device memory.
  */
-#define CHIP_DEVICE_CONFIG_TEST_VENDOR_NAME "Silabs"
+#define CHIP_DEVICE_CONFIG_TEST_VENDOR_NAME "VELUX"
 
 /**
  *  @brief Fallback value for the basic information cluster's product name attribute
  *   if the actual vendor name is not provisioned in the device memory.
  */
-#define CHIP_DEVICE_CONFIG_TEST_PRODUCT_NAME "SL_Sample"
+#define CHIP_DEVICE_CONFIG_TEST_PRODUCT_NAME "NIB_01"
 #endif // CHIP_DEVICE_CONFIG_ENABLE_TEST_SETUP_PARAMS
 
 #if defined(SL_WIFI)
