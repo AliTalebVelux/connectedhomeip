@@ -143,6 +143,12 @@ void MatterCommodityPricePluginServerInitCallback() {}
 void MatterCommodityTariffPluginServerInitCallback() {}
 void MatterElectricalGridConditionsPluginServerInitCallback() {}
 void MatterSoilMeasurementPluginServerInitCallback() {}
+void MatterEthernetNetworkDiagnosticsPluginServerInitCallback() {}
+void MatterIcdManagementPluginServerInitCallback() {}
+void MatterPowerSourcePluginServerInitCallback() {}
+void MatterSoftwareDiagnosticsPluginServerInitCallback() {}
+void MatterUserLabelPluginServerInitCallback() {}
+void MatterWiFiNetworkDiagnosticsPluginServerInitCallback() {}
 
 bool emberAfContainsAttribute(chip::EndpointId endpoint, chip::ClusterId clusterId, chip::AttributeId attributeId)
 {

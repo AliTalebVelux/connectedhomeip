@@ -30,11 +30,11 @@
 
 // Use a default pairing code if one hasn't been provisioned in flash.
 #ifndef CHIP_DEVICE_CONFIG_USE_TEST_SETUP_PIN_CODE
-#define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_PIN_CODE 20202021
+#define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_PIN_CODE 10152025
 #endif
 
 #ifndef CHIP_DEVICE_CONFIG_USE_TEST_SETUP_DISCRIMINATOR
-#define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_DISCRIMINATOR 0xF00
+#define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_DISCRIMINATOR 50
 #endif
 
 // For convenience, Chip Security Test Mode can be enabled and the
@@ -107,3 +107,35 @@
  * 0x0230: Closure Device Type
  */
 #define CHIP_DEVICE_CONFIG_DEVICE_TYPE 0x0230
+
+/**
+ * @def CHIP_DEVICE_CONFIG_USE_TEST_SPAKE2P_ITERATION_COUNT
+ *
+ * @brief
+ *   Test Spake2p iteration count to use if actual iteration count value is not provisioned in the device memory.
+ */
+#define CHIP_DEVICE_CONFIG_USE_TEST_SPAKE2P_ITERATION_COUNT 1000
+
+/**
+ * @def CHIP_DEVICE_CONFIG_USE_TEST_SPAKE2P_SALT
+ *
+ * @brief
+ *   Test Spake2p Salt to use if actual salt value is not provisioned in the device memory.
+ * @note
+ *   The value is base-64 encoded string.
+ */
+#define CHIP_DEVICE_CONFIG_USE_TEST_SPAKE2P_SALT "vleX5xlzNoPBDvfOkcXebg=="
+
+/**
+ * @def CHIP_DEVICE_CONFIG_USE_TEST_SPAKE2P_VERIFIER
+ *
+ * @brief
+ *   Test Spake2p Verifier to use if actual verifier value is not provisioned in the device memory.
+ * @note
+ *   The value is base-64 encoded string.
+ */
+
+// Generated with: spake2p gen-verifier -o - -i 1000 -s "vleX5xlzNoPBDvfOkcXebg==" -p 10152025
+#define CHIP_DEVICE_CONFIG_USE_TEST_SPAKE2P_VERIFIER                                                                               \
+    "eCkEZU6xlOp7gVQji/4MhSZ4mj8YW6NHzxrOBHdEAq0ERrI2hPukruqrJt7ZIQTu0KtjXARCOzwLkSazvD8OxcJk5V73SClpMwBZtLpTGuiRmygJeg8D/"        \
+    "AkCCaPg9pDuCA=="
