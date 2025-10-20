@@ -134,8 +134,6 @@
  * @note
  *   The value is base-64 encoded string.
  */
-
-// Generated with: spake2p gen-verifier -o - -i 1000 -s "vleX5xlzNoPBDvfOkcXebg==" -p 10152025
-#define CHIP_DEVICE_CONFIG_USE_TEST_SPAKE2P_VERIFIER                                                                               \
-    "eCkEZU6xlOp7gVQji/4MhSZ4mj8YW6NHzxrOBHdEAq0ERrI2hPukruqrJt7ZIQTu0KtjXARCOzwLkSazvD8OxcJk5V73SClpMwBZtLpTGuiRmygJeg8D/"        \
+#define CHIP_DEVICE_CONFIG_USE_TEST_SPAKE2P_VERIFIER                                                                         \
+    "eCkEZU6xlOp7gVQji/4MhSZ4mj8YW6NHzxrOBHdEAq0ERrI2hPukruqrJt7ZIQTu0KtjXARCOzwLkSazvD8OxcJk5V73SClpMwBZtLpTGuiRmygJeg8D/"  \
     "AkCCaPg9pDuCA=="

@@ -149,6 +149,8 @@ void MatterPowerSourcePluginServerInitCallback() {}
 void MatterSoftwareDiagnosticsPluginServerInitCallback() {}
 void MatterUserLabelPluginServerInitCallback() {}
 void MatterWiFiNetworkDiagnosticsPluginServerInitCallback() {}
+void MatterThreadNetworkDiagnosticsPluginServerInitCallback() {}
+void MatterOtaSoftwareUpdateRequestorPluginServerInitCallback() {}
 
 bool emberAfContainsAttribute(chip::EndpointId endpoint, chip::ClusterId clusterId, chip::AttributeId attributeId)
 {
