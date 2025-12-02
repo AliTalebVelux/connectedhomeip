@@ -34,7 +34,7 @@
 #endif
 
 #ifndef CHIP_DEVICE_CONFIG_USE_TEST_SETUP_DISCRIMINATOR
-#define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_DISCRIMINATOR 50
+#define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_DISCRIMINATOR 51
 #endif
 
 // For convenience, Chip Security Test Mode can be enabled and the
